@@ -63,7 +63,7 @@ class LastProduct extends Component{
 								</div>
 								<div className="card-body">
 									<div className="text-center">
-										<img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={this.state.productLast.image} alt=" Star Wars - Mandalorian "/>
+										<img className="img-fluid px-3 px-sm-4 mt-3 mb-4" style={{width: 40 +'rem'}} src={'http://localhost:3001/images/' + this.state.productLast.image} alt=" Producto "/>
 									</div>
 									<p>{this.state.productLast.description}</p> 
 									<a className="btn btn-danger" target="_blank" rel="nofollow" href="/">View movie detail</a>

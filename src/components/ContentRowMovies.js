@@ -13,14 +13,14 @@ componentDidMount(){
     let promises = [
     fetch("http://localhost:3001/api/products").then(result => result.json()),
     fetch("http://localhost:3001/api/users").then(result => result.json()),
-    //fetch("http://localhost:3001/api/categories").then(result => result.json())
+    fetch("http://localhost:3001/api/categories").then(result => result.json())
     ];
     
     Promise.all(promises)
     .then(result => {
     let products = result[0].count;
     let users = result[1].total;
-    //let category = result[2];
+    let category = result[2].meta;
 
     this.setState({
             counterData: [
@@ -34,11 +34,11 @@ componentDidMount(){
                 color: "info",
                 value: products
                 },
-            // {
-            //  title: "Total de categorías",
-            //  color: "warning",
-            //  value: 
-            // }
+                {
+                title: "Total de categorías",
+                color: "warning",
+                value: category.total
+                }
                     ]
                 });
             })

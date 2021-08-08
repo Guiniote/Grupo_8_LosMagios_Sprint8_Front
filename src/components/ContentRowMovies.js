@@ -57,7 +57,7 @@ componentDidMount(){
                     iconClass={counter.iconClass}
                     value={counter.value}
                     key={index}
-                    />):<p> Cargando métricas </p>}
+                    />):   <p>Cargando datos </p>}
             </div>
             </React.Fragment>
             )}

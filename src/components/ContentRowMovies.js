@@ -1,42 +1,66 @@
-import React from 'react';
-import SmallCard from './SmallCard';
+import React, { Component } from 'react';
+import TotalAmountPanel from './TotalAmountPanel'
 
-let productInDataBase = {
-    color:   "primary",
-    titulo: "Movies in Data Base",
-    valor: 21,
-    icono: "fas fa-film",
+class ContentRowMovies extends Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            counterData: []
+    }
 }
 
-let amount ={
-    color:   "success",
-    titulo: "Total awards",
-    valor: 79,
-    icono: "fas fa-award",
+componentDidMount(){
+    let promises = [
+    fetch("http://localhost:3001/api/products").then(result => result.json()),
+    fetch("http://localhost:3001/api/users").then(result => result.json()),
+    //fetch("http://localhost:3001/api/categories").then(result => result.json())
+    ];
+    
+    Promise.all(promises)
+    .then(result => {
+    let products = result[0].count;
+    let users = result[1].total;
+    //let category = result[2];
+
+    this.setState({
+            counterData: [
+                {
+                title: "Total de Usuarios",
+                color: "primary",
+                value: users
+                },
+                {
+                title: "Total de productos",
+                color: "info",
+                value: products
+                },
+            // {
+            //  title: "Total de categorías",
+            //  color: "warning",
+            //  value: 
+            // }
+                    ]
+                });
+            })
+    }
+
+        componentDidUpdate(){}
+        render(){
+            return(
+            <React.Fragment>
+            <div className="row">
+                {this.state.counterData.length ?
+                    this.state.counterData.map((counter, index) =>
+                    <TotalAmountPanel
+                    title={counter.title}
+                    color={counter.color}
+                    iconClass={counter.iconClass}
+                    value={counter.value}
+                    key={index}
+                    />):<p> Cargando métricas </p>}
+            </div>
+            </React.Fragment>
+            )}
 }
 
-let user = {
-    color:   "warning",
-    titulo: "Actors quantity",
-    valor: 49,
-    icono: "fas fa-user",
-}
-
-let cardProps = [productInDataBase,amount,user];
-
-
-function ContentRowTop(){
-    return (
-        <React.Fragment>
-        {/*<!-- Content Row -->*/}
-        <div className="row">
-            {
-                cardProps.map((producto,index)=>{
-                    return <SmallCard  {...producto}  key= {index}/>
-                })
-            }      
-        </div>
-        </React.Fragment>
-    )
-}
-export default ContentRowTop;
+export default ContentRowMovies;

@@ -3,59 +3,59 @@
 import React, {Component} from 'react';
 
 //Importar nuestro componente
+
 import Genre from './Genre';
+
 
 class GenresInDb extends Component{
     constructor(){
         super()
         this.state ={
-            genresList : []
+            productsList : []
         }
     }
     //Compomentes Ciclo de vida - Montar - Actualizar - Desmontar
-    //Montaje 
+    //Montaje
+
+
     componentDidMount(){
-        fetch('http://localhost:3001/api/genres')
+        fetch('http://localhost:3001/api/products')
         .then(respuesta =>{
             return respuesta.json()
         })
-        .then(genres =>{
-            //console.log(genres)
-            this.setState({genresList: genres.data})
+        .then(products =>{
+
+            this.setState({productsList: products.countByCategories})
+            
         })
         .catch(error => console.log(error))
-
     }
-
-
     fondo(){
         let fondoCaja = document.querySelector('.fondoCaja');
         fondoCaja.classList.toggle('bg-secondary');
     }
 
-
     render(){
         return (
             <React.Fragment>
                 {/*<!-- Genres in DB -->*/}
-                <div className="col-lg-6 mb-4">						
+                <div className="col-lg-6 mb-4">
                     <div className="card shadow mb-4 " >
                         <div className="card-header py-3">
-                            <h6  onMouseOver = { () => this.fondo()}  className="m-0 font-weight-bold text-gray-800 titulo">Genres in Data Base</h6>
+                            <h6  onMouseOver = { () => this.fondo()}  className="m-0 font-weight-bold text-gray-800 titulo">Products in Data Base</h6>
                         </div>
                         <div className="card-body fondoCaja">
                             <div  className="row">
                                 {
-                                    //console.log(this.state.genresList)
-                                    this.state.genresList.map((genre,index)=>{
-                                        return  <Genre  {...genre}  key={index} />
+                                    this.state.productsList.map((products,i)=>{
+                                        return  <Genre  {...products}  key={i} />
                                     })
                                 }
                             </div>
                         </div>
                     </div>
                 </div>
-    
+
     </React.Fragment>
     )
     }

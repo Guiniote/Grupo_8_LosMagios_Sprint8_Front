@@ -24,8 +24,9 @@ class GenresInDb extends Component{
             return respuesta.json()
         })
         .then(products =>{
-
-            this.setState({productsList: products.countByCategories})
+            console.log('products')
+            console.log(products)
+            this.setState({productsList: products.countByCategory})
             
         })
         .catch(error => console.log(error))
@@ -46,8 +47,9 @@ class GenresInDb extends Component{
                         </div>
                         <div className="card-body fondoCaja">
                             <div  className="row">
+                                {console.log('productList prueba')}
                                 {
-                                    this.state.productsList.map((products,i)=>{
+                                        this.state.productsList.map((products,i)=>{
                                         return  <Genre  {...products}  key={i} />
                                     })
                                 }

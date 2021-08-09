@@ -6,8 +6,8 @@ function Genre(products){
             <div className="col-lg-6 mb-4">
                 <div className="card bg-dark text-white shadow ">
                     <div className="card-body">
-                        {products.Cámaras} <br />
-                        {products.Trípodes} <br />
+                        {`${products.name} `} 
+                        {products.quantity}
 
                     </div>
                 </div>

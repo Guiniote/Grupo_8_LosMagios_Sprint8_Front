@@ -8,7 +8,7 @@ function ProductListRow (props){
                 <td>{props.id}</td>
                 <td>{props.name}</td>
                 <td>{props.description}</td>
-                <td>{props.detail}</td>                
+                <td><a href={props.detail}>Detalle</a></td>                
             </tr>
         </React.Fragment>
     )

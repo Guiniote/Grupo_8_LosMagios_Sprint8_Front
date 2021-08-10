@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import ProductListRow from './ProductListRow';
 
 
-
 class ProductList extends Component {
     constructor(){
         super();
@@ -57,7 +56,6 @@ class ProductList extends Component {
                                     return <ProductListRow {...product} key={index} />
                                 })                                
                                 } 
-
                             </tbody>
                         </table>
                     </div>

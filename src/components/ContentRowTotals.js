@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import TotalAmountPanel from './TotalAmountPanel'
 
-class ContentRowMovies extends Component {
+
+class ContentRowTotals extends Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -63,4 +64,4 @@ componentDidMount(){
             )}
 }
 
-export default ContentRowMovies;
+export default ContentRowTotals;

@@ -1,5 +1,5 @@
 import React from 'react';
-import image from '../assets/images/logo-DH.png';
+import image from '../assets/images/wedo_vector.png';
 
 function SideBar(){
     return(
@@ -9,8 +9,8 @@ function SideBar(){
 
                 {/*<!-- Sidebar - Brand -->*/}
                 <a className="sidebar-brand d-flex align-items-center justify-content-center" href="/">
-                    <div className="sidebar-brand-icon">
-                        <img className="w-100" src={image} alt="Digital House"/>
+                    <div className="sidebar-brand-icon align-items-left">
+                        <img className="w-50" src={image} alt="We Do Studios"/>
                     </div>
                 </a>
 
@@ -20,8 +20,8 @@ function SideBar(){
                 {/*<!-- Nav Item - Dashboard -->*/}
                 <li className="nav-item active">
                     <a className="nav-link" href="/">
-                        <i className="fas fa-fw fa-tachometer-alt"></i>
-                        <span>Dashboard - DH movies</span></a>
+                        
+                        <span>Dashboard - We Do Studios</span></a>
                 </li>
 
                 {/*<!-- Divider -->*/}

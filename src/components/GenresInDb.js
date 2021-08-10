@@ -15,15 +15,15 @@ class GenresInDb extends Component{
     //Compomentes Ciclo de vida - Montar - Actualizar - Desmontar
     //Montaje 
     componentDidMount(){
-        fetch('http://localhost:3001/api/genres')
-        .then(respuesta =>{
-            return respuesta.json()
-        })
-        .then(genres =>{
-            //console.log(genres)
-            this.setState({genresList: genres.data})
-        })
-        .catch(error => console.log(error))
+        // fetch('http://localhost:3001/api/genres')
+        // .then(respuesta =>{
+        //     return respuesta.json()
+        // })
+        // .then(genres =>{
+        //     //console.log(genres)
+        //     this.setState({genresList: genres.data})
+        // })
+        // .catch(error => console.log(error))
 
     }
 

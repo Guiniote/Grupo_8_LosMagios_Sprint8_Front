@@ -1,5 +1,4 @@
 import React from 'react';
-import imagenFondo from '../assets/images/mandalorian.jpg';
 import GenresInDb from './GenresInDb';
 import ContentRowMovies from './ContentRowMovies';
 import LastProduct from './LastProduct';

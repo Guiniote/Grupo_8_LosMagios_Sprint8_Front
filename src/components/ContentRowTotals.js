@@ -12,9 +12,9 @@ class ContentRowTotals extends Component {
 
 componentDidMount(){
     let promises = [
-    fetch("http://localhost:3001/api/products").then(result => result.json()),
-    fetch("http://localhost:3001/api/users").then(result => result.json()),
-    fetch("http://localhost:3001/api/categories").then(result => result.json())
+    fetch(process.env.REACT_APP_API + "/api/products").then(result => result.json()),
+    fetch(process.env.REACT_APP_API + "/api/users").then(result => result.json()),
+    fetch(process.env.REACT_APP_API + "/api/categories").then(result => result.json())
     ];
     
     Promise.all(promises)

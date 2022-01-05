@@ -13,7 +13,7 @@ class ProductList extends Component {
     }
 
     componentDidMount(){                 
-        fetch('http://localhost:3001/api/products')
+        fetch(process.env.REACT_APP_API + '/api/products')
         .then(respuesta => {
             return respuesta.json();
         })

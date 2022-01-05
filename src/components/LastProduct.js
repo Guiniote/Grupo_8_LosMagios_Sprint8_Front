@@ -14,7 +14,7 @@ class LastProduct extends Component{
     //Compomentes Ciclo de vida - Montar - Actualizar - Desmontar
     //Montaje 
     componentDidMount(){
-        fetch('http://localhost:3001/api/products')
+        fetch('https://losmagiosback.herokuapp.com/api/products')
         .then(respuesta =>{
 
             return respuesta.json()

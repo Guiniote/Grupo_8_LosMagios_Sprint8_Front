@@ -19,7 +19,7 @@ class GenresInDb extends Component{
 
 
     componentDidMount(){
-        fetch('http://localhost:3001/api/products')
+        fetch('https://losmagiosback.herokuapp.com/api/products')
         .then(respuesta =>{
             return respuesta.json()
         })

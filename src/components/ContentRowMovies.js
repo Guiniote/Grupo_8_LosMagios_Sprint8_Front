@@ -11,9 +11,9 @@ class ContentRowMovies extends Component {
 
 componentDidMount(){
     let promises = [
-    fetch("http://localhost:3001/api/products").then(result => result.json()),
-    fetch("http://localhost:3001/api/users").then(result => result.json()),
-    fetch("http://localhost:3001/api/categories").then(result => result.json())
+    fetch("https://losmagiosback.herokuapp.com/api/products").then(result => result.json()),
+    fetch("https://losmagiosback.herokuapp.com/api/users").then(result => result.json()),
+    fetch("https://losmagiosback.herokuapp.com/api/categories").then(result => result.json())
     ];
     
     Promise.all(promises)
